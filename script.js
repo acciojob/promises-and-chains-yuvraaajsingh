@@ -1,4 +1,3 @@
-//your JS code here. If required.
 function doSomething() {
   let age = document.getElementById("age").value;
   let name = document.getElementById("name").value;
@@ -7,13 +6,17 @@ function doSomething() {
     alert("Please enter valid details");
   }
 
-  const promise = new Promise((resolve, reject) => {
+  new Promise((resolve, reject) => {
     setTimeout(() => {
       if (age > 18) {
-        resolve("Welcome, . You can vote.");
+        resolve();
       } else {
-        reject("Oh sorry . You aren't old enough.");
+        reject();
       }
     }, 1000);
-  });
-}
+  }).then(function(){
+    console.log("Welcome, . You can vote.")
+  }).catch(function(data){
+    console.log("Oh sorry . You aren't old enough.");
+    
+  })
